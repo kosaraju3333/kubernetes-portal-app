@@ -5,8 +5,8 @@ metadata:
   namespace: portal
 data:
   host: db.spontansolutions.com
-  port: 5432
+  port: "5432"
   user: postgres
   password: postgres
   database: spontan
-  listen_port: 3000
+  listen_port: "3000"
