@@ -1,0 +1,42 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: portal-app-deployment
+  namespace: portal
+  labels:
+    app: portal
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: portal
+  template:
+    metadata:
+      name: portal-app
+      labels:
+        app: portal
+    spec:
+      containers:
+      - name: portal-container
+        image: kosaraju333/portal-spontan-env:V1
+        env:
+        - name: HOST
+          value: "db.spontansolutions.com"
+        - name: PORT
+          value: "5432"
+        - name: USER
+          value: "postgres"
+        - name: PASSWORD
+          value: "postgres"
+        - name: DATABASE
+          value: "spontan"
+        ports:
+        - containerPort: 3000
+        # resources:
+        #   requests:
+        #     memory: 20Mi
+        #     cpu: "0.25"
+        #   limits:
+        #     memory: 400Mi
+        #     cpu: "1"
