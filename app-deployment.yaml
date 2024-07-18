@@ -33,18 +33,18 @@ spec:
               key: port
         - name: USER
           valueFrom:
-            configMapKeyRef:
-              name: portal-app-configmap
+            secretKeyRef:
+              name: portal-app-secrets
               key: user
         - name: PASSWORD
           valueFrom:
-            configMapKeyRef:
-              name: portal-app-configmap
+            secretKeyRef:
+              name: portal-app-secrets
               key: password
         - name: DATABASE
           valueFrom:
-            configMapKeyRef:
-              name: portal-app-configmap
+            secretKeyRef:
+              name: portal-app-secrets
               key: database
         - name: listen_PORT
           valueFrom:
