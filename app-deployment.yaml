@@ -22,17 +22,35 @@ spec:
         image: kosaraju333/portal-spontan-env:V1
         env:
         - name: HOST
-          value: "db.spontansolutions.com"
+          valueFrom:
+            configMapKeyRef:
+              name: portal-app-configmap
+              key: host
         - name: PORT
-          value: "5432"
+          valueFrom:
+            configMapKeyRef:
+              name: portal-app-configmap
+              key: port
         - name: USER
-          value: "postgres"
+          valueFrom:
+            configMapKeyRef:
+              name: portal-app-configmap
+              key: user
         - name: PASSWORD
-          value: "postgres"
+          valueFrom:
+            configMapKeyRef:
+              name: portal-app-configmap
+              key: password
         - name: DATABASE
-          value: "spontan"
+          valueFrom:
+            configMapKeyRef:
+              name: portal-app-configmap
+              key: database
         - name: listen_PORT
-          value: "3000"
+          valueFrom:
+            configMapKeyRef:
+              name: portal-app-configmap
+              key: listen_port
         ports:
         - containerPort: 3000
         # resources:
