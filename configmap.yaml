@@ -6,7 +6,4 @@ metadata:
 data:
   host: db.spontansolutions.com
   port: "5432"
-  user: postgres
-  password: postgres
-  database: spontan
   listen_port: "3000"
