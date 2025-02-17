@@ -5,7 +5,7 @@ metadata:
   name: portal-ingress-resource
   annotations:
     #    kubernetes.io/ingress.class: alb
-    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:828048069567:certificate/52b716a1-2af8-477a-abb4-f720289b6d14
+    alb.ingress.kubernetes.io/certificate-arn: SSL-CERTIFICATE-ARN
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS":443}]'
     alb.ingress.kubernetes.io/ssl-redirect: '443'
     alb.ingress.kubernetes.io/scheme: internet-facing
